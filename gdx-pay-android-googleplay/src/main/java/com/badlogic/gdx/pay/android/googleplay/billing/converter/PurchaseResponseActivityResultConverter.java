@@ -27,6 +27,7 @@ public class PurchaseResponseActivityResultConverter {
         try {
             Transaction transaction = convertJSONPurchaseToTransaction(purchaseDataString);
 
+            transaction.setOriginalJson(purchaseDataString);
             transaction.setTransactionDataSignature(responseData.getStringExtra(GoogleBillingConstants.INAPP_DATA_SIGNATURE));
 
             String productId = transaction.getIdentifier();

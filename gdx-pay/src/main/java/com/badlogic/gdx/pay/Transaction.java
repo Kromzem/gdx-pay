@@ -27,6 +27,9 @@ public final class Transaction {
 	public static final String REVERSAL_TEXT_REFUNDED = "Refunded";
 
 	/** Item identifier/SKU number. */
+	private String originalJson;
+
+	/** Item identifier/SKU number. */
 	private String identifier;
 
 	/** The store name. */
@@ -183,6 +186,15 @@ public final class Transaction {
 	/** A signature for the purchase data string for validation of the data (or null for unknown). */
 	public void setTransactionDataSignature (String transactionDataSignature) {
 		this.transactionDataSignature = transactionDataSignature;
+	}
+
+	public void setOriginalJson (String originalJson) {
+		this.originalJson = originalJson;
+	}
+
+	/** The original Data returned from Store*/
+	public String getOriginalJson () {
+		return this.originalJson;
 	}
 
 
